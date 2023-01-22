@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
    public void Play()
     {
         Onclicksfx.Play();
-        SceneManager.LoadScene(firstLevel);
+        StartCoroutine(StartGame());
     }
 
     public void OpenOptions()
@@ -32,4 +32,13 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
-}
+
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(firstLevel);
+    }
+
+
+
+}//class
