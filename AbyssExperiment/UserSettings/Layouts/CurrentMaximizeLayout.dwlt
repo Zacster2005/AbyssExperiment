@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 15019
+  controlID: 15928
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 14968
+  controlID: 15829
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -504,9 +504,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -45.047077, y: 0.3235677, z: -16.209599}
+    m_Target: {x: 19.73497, y: -7.5241838, z: 14.810901}
     speed: 2
-    m_Value: {x: -45.047077, y: 0.3235677, z: -16.209599}
+    m_Value: {x: 19.73497, y: -7.5241838, z: 14.810901}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,13 +552,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.015670788, y: 0.818373, z: -0.022347603, w: -0.5740544}
+    m_Target: {x: 0.094488256, y: 0.5224215, z: -0.058380928, w: 0.8454343}
     speed: 2
-    m_Value: {x: -0.015670648, y: 0.8183657, z: -0.022347404, w: -0.5740493}
+    m_Value: {x: 0.094487324, y: 0.5224163, z: -0.05838035, w: 0.84542596}
   m_Size:
-    m_Target: 17.717705
+    m_Target: 26.170563
     speed: 2
-    m_Value: 17.717705
+    m_Value: 26.170563
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -656,22 +656,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Kevin Iglesias/Basic Motions/Materials
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Kevin Iglesias/Basic Motions/Materials
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\zacst\Documents\GitHub\AbyssExperiment\AbyssExperiment
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 155.80002}
-    m_SelectedIDs: c2770000
-    m_LastClickedID: 30658
+    scrollPos: {x: 0, y: 187.80002}
+    m_SelectedIDs: e25e0000
+    m_LastClickedID: 24290
     m_ExpandedIDs: 00000000cc5e0000ce5e0000d05e0000d65e0000e05e0000e45e0000f25e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc5e0000ce5e0000d05e0000d25e0000d45e0000d65e000000ca9a3b
+    m_ExpandedIDs: 00000000cc5e0000ce5e0000d05e0000d65e0000e05e0000e45e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -725,8 +725,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d083ffff
-    m_LastClickedInstanceID: -31792
+    m_SelectedInstanceIDs: 0c5f0000
+    m_LastClickedInstanceID: 24332
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -854,7 +854,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -31792
+  m_LastInspectedObjectInstanceID: 24332
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -880,8 +880,8 @@ MonoBehaviour:
     y: 0
     width: 202.40002
     height: 722.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -925,7 +925,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2a86ffffb687ffff82a6ffff14adffff7ccaffffaecaffffc6faffffd6faffffe6fafffff6faffff06fbffff08fbffff685d00007e5d0000bc5d0000e65d0000205e0000245e00003a5e00005a5e0000
+      m_ExpandedIDs: e874ffff2a86ffffb687ffff82a6ffff14adffff7ccaffffaecaffffc6faffffd6faffffe6fafffff6faffff06fbffff08fbffff685d00007e5d0000bc5d0000e65d0000205e0000245e00003a5e00005a5e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
