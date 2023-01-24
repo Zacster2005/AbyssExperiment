@@ -26,7 +26,7 @@ public class Flashlight : MonoBehaviour
 
 
         //Input works
-        //Turn ON
+        //Turn Off
         if (Input.GetMouseButton(0) && LightOn == true && Wait || Nobat)
         {      
             Light.SetActive(false);
@@ -38,7 +38,7 @@ public class Flashlight : MonoBehaviour
 
         }
         
-        //Turn OFF
+        //Turn on
         if (Input.GetMouseButton(0) && LightOn == false && Wait && !Nobat)
         {
             Light.SetActive(true);
