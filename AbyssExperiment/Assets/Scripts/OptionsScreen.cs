@@ -7,7 +7,7 @@ using TMPro;
 public class Options : MonoBehaviour
 {
     public Toggle fullscreenTog, vsyncTog;
-    public List<ResItem> resolutions= new List<ResItem>();
+    public List<ResItem> resolutions = new List<ResItem>();
     private int selectedResolution;
     public TMP_Text resolutionLabel;
 
@@ -23,9 +23,33 @@ public class Options : MonoBehaviour
         {
             vsyncTog.isOn = true;
         }
+
+        bool foundRes = false;
+        for(int i = 0; i < resolutions.Count; i++)
+        {
+            if(Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
+            {
+                foundRes = true;
+
+                selectedResolution = i;
+
+                UpdateResLabel();
+            }
+        }
+
+        if(!foundRes)
+        {
+            ResItem newRes = new ResItem();
+            newRes.horizontal = Screen.width;
+            newRes.vertical = Screen.height;
+
+            resolutions.Add(newRes);
+            selectedResolution = resolutions.Count - 1;
+            UpdateResLabel();
+        }
     }
 
-    public void ResLeft()
+    public void ResRight()
     {
         selectedResolution--;
         if(selectedResolution < 0 )
@@ -36,7 +60,7 @@ public class Options : MonoBehaviour
         UpdateResLabel();
     }
 
-    public void ResRight()
+    public void ResLeft()
     {
         selectedResolution++;
         if (selectedResolution > resolutions.Count - 1)
@@ -54,7 +78,7 @@ public class Options : MonoBehaviour
 
     public void ApplyGraphics()
     {
-        Screen.fullScreen = fullscreenTog.isOn;
+        //Screen.fullScreen = fullscreenTog.isOn;
         if(fullscreenTog.isOn)
         {
             QualitySettings.vSyncCount = 1;
@@ -63,6 +87,8 @@ public class Options : MonoBehaviour
         {
             QualitySettings.vSyncCount = 0;
         }
+
+        Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullscreenTog.isOn);
     }
 }
 

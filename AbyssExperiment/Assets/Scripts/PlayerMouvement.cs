@@ -17,7 +17,7 @@ public class PlayerMouvement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    bool isRunning;
+    
 
     
 
@@ -33,17 +33,7 @@ public class PlayerMouvement : MonoBehaviour
     void Update()
     {
         
-        if(!isRunning && Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Speed = Speed * 2;
-            isRunning = true;
-        }
-
-        if (isRunning && Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            Speed = Speed / 2;
-            isRunning = false;
-        }
+       
 
 
 
