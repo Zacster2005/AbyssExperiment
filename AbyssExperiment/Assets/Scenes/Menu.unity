@@ -283,7 +283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 904, y: 0}
+  m_AnchoredPosition: {x: 877, y: 0}
   m_SizeDelta: {x: -1354, y: -530}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &112314160
@@ -1070,7 +1070,7 @@ AudioSource:
   m_GameObject: {fileID: 299558712}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -2694951517766477647, guid: 7df43f18403fa2c408e554477a35d58d, type: 2}
+  OutputAudioMixerGroup: {fileID: -7563001006026783800, guid: 7df43f18403fa2c408e554477a35d58d, type: 2}
   m_audioClip: {fileID: 8300000, guid: d698ef321810a9f4a8909ceb36805831, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1817,8 +1817,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1605555662}
   m_HandleRect: {fileID: 426062221}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: de2159bea6869cf4098a98fee9a2cd6c, type: 2}
   m_sharedMaterial: {fileID: 7066725382973525739, guid: de2159bea6869cf4098a98fee9a2cd6c, type: 2}
@@ -2397,7 +2397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 427, y: 150}
+  m_AnchoredPosition: {x: 400, y: 150}
   m_SizeDelta: {x: 200, y: 28.9988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686970058
@@ -2981,7 +2981,7 @@ AudioSource:
   m_GameObject: {fileID: 857603038}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2694951517766477647, guid: 7df43f18403fa2c408e554477a35d58d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 111cb335d900e3146b681d864ab64f8a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
@@ -3346,7 +3346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: de2159bea6869cf4098a98fee9a2cd6c, type: 2}
   m_sharedMaterial: {fileID: 7066725382973525739, guid: de2159bea6869cf4098a98fee9a2cd6c, type: 2}
@@ -4917,7 +4917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 904, y: -122}
+  m_AnchoredPosition: {x: 877, y: -122}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1605555661
@@ -5168,7 +5168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: de2159bea6869cf4098a98fee9a2cd6c, type: 2}
   m_sharedMaterial: {fileID: 7066725382973525739, guid: de2159bea6869cf4098a98fee9a2cd6c, type: 2}
@@ -5463,10 +5463,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2020440718}
   m_HandleRect: {fileID: 1611118990}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5655,7 +5655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 904, y: -61}
+  m_AnchoredPosition: {x: 877, y: -61}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1864360008
@@ -6893,10 +6893,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 430823657}
   m_HandleRect: {fileID: 2088111584}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: -60
+  m_MaxValue: -10
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

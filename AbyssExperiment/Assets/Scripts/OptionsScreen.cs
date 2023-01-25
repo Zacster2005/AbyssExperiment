@@ -46,9 +46,9 @@ public class Options : MonoBehaviour
             theMixer.GetFloat("SFXVol", out vol);
             sfxSlider.value = vol;
 
-            mastLabel.text = Mathf.RoundToInt(mastSlider.value + 80).ToString();
-            musicLabel.text = Mathf.RoundToInt(musicSlider.value + 80).ToString();
-            sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
+            mastLabel.text = Mathf.RoundToInt(mastSlider.value + 50).ToString();
+            musicLabel.text = Mathf.RoundToInt(musicSlider.value + 50).ToString();
+            sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 60).ToString();
         }
 
         if(!foundRes)
@@ -107,7 +107,7 @@ public class Options : MonoBehaviour
 
     public void SetMasterVol()
     {
-        mastLabel.text = Mathf.RoundToInt(mastSlider.value + 80).ToString();
+        mastLabel.text = Mathf.RoundToInt(mastSlider.value + 50).ToString();
 
         theMixer.SetFloat("MasterVol", mastSlider.value);
 
@@ -116,7 +116,7 @@ public class Options : MonoBehaviour
 
     public void SetMusicVol()
     {
-        musicLabel.text = Mathf.RoundToInt(musicSlider.value + 80).ToString();
+        musicLabel.text = Mathf.RoundToInt(musicSlider.value + 50).ToString();
 
         theMixer.SetFloat("MusicVol", musicSlider.value);
 
@@ -125,7 +125,7 @@ public class Options : MonoBehaviour
 
     public void SetSFXVol()
     {
-        sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
+        sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 60).ToString();
 
         theMixer.SetFloat("SFXVol", sfxSlider.value);
 
