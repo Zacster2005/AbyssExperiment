@@ -13,6 +13,8 @@ public class Options : MonoBehaviour
     public AudioMixer theMixer;
     public TMP_Text mastLabel, musicLabel, sfxLabel;
     public Slider mastSlider, musicSlider, sfxSlider;
+    public TMP_Text msensLabel;
+    public Slider msensSlider;
     private void Start()
     {
         fullscreenTog.isOn = Screen.fullScreen;
@@ -130,6 +132,11 @@ public class Options : MonoBehaviour
         theMixer.SetFloat("SFXVol", sfxSlider.value);
 
         PlayerPrefs.SetFloat("SFXVol", sfxSlider.value);
+    }
+
+    public void SetMouseSensVal()
+    {
+        msensLabel.text = Mathf.RoundToInt(msensSlider.value).ToString();
     }
 }
 
