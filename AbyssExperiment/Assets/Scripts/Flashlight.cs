@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class Flashlight : MonoBehaviour
 {
-    public GameObject Light;
+    public static GameObject Light;
     public bool LightOn;
     public bool Wait = true;
     public float BatteryPercent = 100;
     public bool Nobat;
     public Text test;
+
+    public static float shake;
 
     // Start is called before the first frame update
     void Start()
@@ -80,5 +82,12 @@ public class Flashlight : MonoBehaviour
         Wait = true;
     }
 
-
+    public static void Shake()
+    {
+        shake = Random.Range(0.25f, 0.75f);
+        
+        Vector3 move = new(0, shake, 0);
+        Light.transform.position = move;
+        Shake();
+    }
 }//class

@@ -32,7 +32,7 @@ public class PlayerMouvement : MonoBehaviour
     
     void Update()
     {
-        
+        //raycast down
        
 
 
@@ -51,23 +51,23 @@ public class PlayerMouvement : MonoBehaviour
 
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
-
+            
 
             Vector3 move = transform.right * x + transform.forward * z;
 
             controller.Move(move * Speed * Time.deltaTime);
-
-            if (Input.GetKey(KeyCode.Space)&& isGrounded)
+            
+             if (Input.GetKey(KeyCode.Space)&& isGrounded)
             {
                 velocity.y = Mathf.Sqrt(JumpHeigth * -2 * Gravity);
-            isGrounded = false;
-            StartCoroutine (Jumping());
+                isGrounded = false;
+                StartCoroutine (Jumping());
             }
 
             velocity.y += Gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
-       
+            
         if (velocity.y < 0f)
         {
             velocity.y = -2f;
@@ -78,18 +78,7 @@ public class PlayerMouvement : MonoBehaviour
             yield return new WaitForSeconds(10f);
             isGrounded = true;
         }
-            //Animations
-
-        if(move != Vector3.zero)
-        {
-            animator.SetBool("isMoving", true);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
-        }
-
-
+            
 
         //Augmented Mouvement
 
