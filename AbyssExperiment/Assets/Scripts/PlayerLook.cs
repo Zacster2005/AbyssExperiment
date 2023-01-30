@@ -16,6 +16,8 @@ public class PlayerLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+  
+
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +31,8 @@ public class PlayerLook : MonoBehaviour
         PlayerBody.Rotate(Vector3.up * mouseX);
 
 
-
+        float mouseSensitivity = PlayerPrefs.GetFloat("MouseSens");
+        float rotationAmount = Input.GetAxis("Mouse X") * mouseSensitivity;
 
 
     }

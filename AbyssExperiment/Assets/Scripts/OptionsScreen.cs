@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Audio;
+using UnityEngine.UIElements;
+
 public class Options : MonoBehaviour
 {
-    public Toggle fullscreenTog, vsyncTog;
+    public UnityEngine.UI.Toggle fullscreenTog, vsyncTog;
     public List<ResItem> resolutions = new List<ResItem>();
     private int selectedResolution;
     public TMP_Text resolutionLabel;
     public AudioMixer theMixer;
     public TMP_Text mastLabel, musicLabel, sfxLabel;
-    public Slider mastSlider, musicSlider, sfxSlider;
+    public UnityEngine.UI.Slider mastSlider, musicSlider, sfxSlider;
     public TMP_Text msensLabel;
-    public Slider msensSlider;
+    public UnityEngine.UI.Slider msensSlider;
     private void Start()
     {
         fullscreenTog.isOn = Screen.fullScreen;
@@ -137,6 +139,8 @@ public class Options : MonoBehaviour
     public void SetMouseSensVal()
     {
         msensLabel.text = Mathf.RoundToInt(msensSlider.value).ToString();
+
+        
     }
 }
 
