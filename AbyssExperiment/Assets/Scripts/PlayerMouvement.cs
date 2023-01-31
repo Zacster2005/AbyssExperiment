@@ -12,7 +12,7 @@ public class PlayerMouvement : MonoBehaviour
     public AudioSource Land;
 
     private Animator animator;
-    
+    public LightShake lightShake;
 
     Vector3 velocity;
     bool isGrounded;
@@ -61,26 +61,25 @@ public class PlayerMouvement : MonoBehaviour
             {
                 velocity.y = Mathf.Sqrt(JumpHeigth * -2 * Gravity);
                 isGrounded = false;
-                StartCoroutine (Jumping());
             }
 
             velocity.y += Gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
-            
+              
+
+
         if (velocity.y < 0f)
         {
             velocity.y = -2f;
         }
 
-        IEnumerator Jumping()
+        if(velocity.x >0f || velocity.z > 0f)
         {
-            yield return new WaitForSeconds(10f);
-            isGrounded = true;
+            StartCoroutine(lightShake.Shake(2f, 5f));
         }
-            
 
-        //Augmented Mouvement
+      
 
     }//update
    

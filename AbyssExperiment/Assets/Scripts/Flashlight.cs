@@ -12,7 +12,7 @@ public class Flashlight : MonoBehaviour
     public bool Nobat;
     public Text test;
 
-    public static float shake;
+
 
     // Start is called before the first frame update
     void Start()
@@ -82,12 +82,6 @@ public class Flashlight : MonoBehaviour
         Wait = true;
     }
 
-    public static void Shake()
-    {
-        shake = Random.Range(0.25f, 0.75f);
-        
-        Vector3 move = new(0, shake, 0);
-        Light.transform.position = move;
-        Shake();
-    }
+
+
 }//class
