@@ -43,15 +43,13 @@ public class Options : MonoBehaviour
             }
 
             float vol = 0;
-            float sens = 0;
             theMixer.GetFloat("MasterVol", out vol);
             mastSlider.value = vol;
             theMixer.GetFloat("MusicVol", out vol);
             musicSlider.value = vol;
             theMixer.GetFloat("SFXVol", out vol);
             sfxSlider.value = vol;
-            PlayerPrefs.GetFloat("mouseSens", out);
-            msensSlider.value = sens;
+            
 
             mastLabel.text = Mathf.RoundToInt(mastSlider.value + 50).ToString();
             musicLabel.text = Mathf.RoundToInt(musicSlider.value + 50).ToString();
@@ -146,8 +144,6 @@ public class Options : MonoBehaviour
         PlayerLook.mouseSens = msensSlider.value;
         
         
-        
-        PlayerPrefs.SetFloat("mouseSens", msensSlider.value);
     }
 }
 
