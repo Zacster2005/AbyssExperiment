@@ -10,7 +10,7 @@ public class PlayerMouvement : MonoBehaviour
     public float Gravity = -20f;
     public float JumpHeigth = 1f;
     public AudioSource Land;
-
+    public int Downlength;
     private Animator animator;
     public LightShake lightShake;
 
@@ -32,12 +32,17 @@ public class PlayerMouvement : MonoBehaviour
     
     void Update()
     {
-        //raycast down
-       
+        RaycastHit hit;
+        
+        Vector3 dwn = transform.TransformDirection(Vector3.down);
+
+        if (Physics.Raycast(transform.position, dwn, out hit, Downlength))
+        {
+            isGrounded= true;
+        }
 
 
-
-        if (controller.isGrounded)
+            if (controller.isGrounded)
         {
             isGrounded = true;
         }
@@ -74,9 +79,9 @@ public class PlayerMouvement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        if(velocity.x >0f || velocity.z > 0f)
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
-            StartCoroutine(lightShake.Shake(2f, 5f));
+            StartCoroutine(lightShake.Shake(.5f, 1f));
         }
 
       

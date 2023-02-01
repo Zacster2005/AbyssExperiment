@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98bb4bd9448e3c74d84dcb2b9ebc245d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightOn: 0
+  LightOn: 1
   Wait: 0
   BatteryPercent: 100
   Nobat: 0
@@ -743,7 +743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39289940f0352904cbed57cb0d07ee65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSens: 100
   PlayerBody: {fileID: 1550598951}
 --- !u!1001 &1115142294
 PrefabInstance:
@@ -933,7 +932,8 @@ MonoBehaviour:
   Gravity: -20
   JumpHeigth: 1
   Land: {fileID: 0}
-  lightShake: {fileID: 0}
+  Downlength: 1
+  lightShake: {fileID: 179647873}
 --- !u!143 &1550598950
 CharacterController:
   m_ObjectHideFlags: 0
