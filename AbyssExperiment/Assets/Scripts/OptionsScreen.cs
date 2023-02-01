@@ -140,7 +140,10 @@ public class Options : MonoBehaviour
     {
         msensLabel.text = Mathf.RoundToInt(msensSlider.value).ToString();
 
+        PlayerLook.mouseSens = msensSlider.value;
+        PlayerPrefs.GetFloat("mouseSens");
         
+        PlayerPrefs.SetFloat("mouseSens", msensSlider.value);
     }
 }
 
