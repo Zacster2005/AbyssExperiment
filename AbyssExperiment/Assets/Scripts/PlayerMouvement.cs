@@ -9,10 +9,11 @@ public class PlayerMouvement : MonoBehaviour
     public float Speed = 12f;
     public float Gravity = -20f;
     public float JumpHeigth = 1f;
-    public AudioSource Land;
+    public AudioSource Walk;
     public int Downlength;
     private Animator animator;
     public LightShake lightShake;
+
 
     Vector3 velocity;
     bool isGrounded;
@@ -42,11 +43,7 @@ public class PlayerMouvement : MonoBehaviour
         }
 
 
-            if (controller.isGrounded)
-        {
-            isGrounded = true;
-        }
-       
+          
 
         if ( velocity.y < 0f && isGrounded)
             {
@@ -71,7 +68,7 @@ public class PlayerMouvement : MonoBehaviour
             velocity.y += Gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
-              
+            
 
 
         if (velocity.y < 0f)
@@ -88,4 +85,7 @@ public class PlayerMouvement : MonoBehaviour
 
     }//update
    
+    
+
+
 }//class
