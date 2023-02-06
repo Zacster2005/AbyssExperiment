@@ -19,6 +19,8 @@ public class Flashlight : MonoBehaviour
     {
         LightOn = true;
         Wait = true;
+        GameObject theLight = GameObject.Find("Spot Light");
+        Light = theLight;
     }
 
     // Update is called once per frame
