@@ -13,10 +13,10 @@ public class Options : MonoBehaviour
     private int selectedResolution;
     public TMP_Text resolutionLabel;
     public AudioMixer theMixer;
-    public TMP_Text mastLabel, musicLabel, sfxLabel;
-    public UnityEngine.UI.Slider mastSlider, musicSlider, sfxSlider;
-    public TMP_Text msensLabel;
-    public UnityEngine.UI.Slider msensSlider;
+    public TMP_Text mastLabel, musicLabel, sfxLabel, msensLabel;
+    public UnityEngine.UI.Slider mastSlider, musicSlider, sfxSlider, msensSlider;
+
+    
     private void Start()
     {
         fullscreenTog.isOn = Screen.fullScreen;
@@ -65,8 +65,14 @@ public class Options : MonoBehaviour
             resolutions.Add(newRes);
             selectedResolution = resolutions.Count - 1;
             UpdateResLabel();
+
+            
         }
     }
+
+    
+
+
 
     public void ResRight()
     {
@@ -142,9 +148,12 @@ public class Options : MonoBehaviour
         msensLabel.text = Mathf.RoundToInt(msensSlider.value).ToString();
 
         PlayerLook.mouseSens = msensSlider.value;
+
         
-        
+
     }
+
+    
 }
 
 [System.Serializable]

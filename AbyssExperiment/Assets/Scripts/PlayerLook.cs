@@ -14,6 +14,8 @@ public class PlayerLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        
     }
 
   
@@ -34,4 +36,6 @@ public class PlayerLook : MonoBehaviour
 
 
     }
+
+    
 }
