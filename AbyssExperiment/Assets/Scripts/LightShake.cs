@@ -14,10 +14,10 @@ public class LightShake : MonoBehaviour {
 
         while (elapsed < duration)
         {
-            float x = Random.Range(-.25f, .25f);
+           
             float y = Random.Range(-.25f, .25f);
 
-            transform.localPosition = new Vector3(x, y, originalPos.z);
+            transform.localPosition = new Vector3(originalPos.x, y, originalPos.z);
 
             elapsed += Time.deltaTime;
 

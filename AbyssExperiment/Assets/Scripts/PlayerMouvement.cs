@@ -42,6 +42,10 @@ public class PlayerMouvement : MonoBehaviour
             isGrounded= true;
         }
 
+        if(controller.isGrounded)
+        {
+            isGrounded = true;
+        }
 
           
 
