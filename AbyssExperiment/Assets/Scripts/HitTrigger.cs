@@ -11,12 +11,15 @@ public class HitTrigger : MonoBehaviour
     {
         if(other.gameObject.tag == "Breakable")
         {
-            BreakBarricade.Hit = other.gameObject;
-            //play ANIMATION
-            BreakBarricade.Destroy();
-            BreakBarricade.Hit = null;
+           Destroy(other.gameObject);
             Break.Play();
-
         }
+
+        if(other.gameObject.tag == "Door")
+        {
+            //open door audio
+ 
+        }
+
     }//TriggerEnter
 }//class
