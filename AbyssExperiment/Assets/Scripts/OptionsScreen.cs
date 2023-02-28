@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Options : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class Options : MonoBehaviour
     public AudioMixer theMixer;
     public TMP_Text mastLabel, musicLabel, sfxLabel, msensLabel;
     public UnityEngine.UI.Slider mastSlider, musicSlider, sfxSlider, msensSlider;
-
+    
+    
     
     private void Start()
     {
@@ -68,10 +70,12 @@ public class Options : MonoBehaviour
 
             
         }
+
+        
     }
 
     
-
+    
 
 
     public void ResRight()
