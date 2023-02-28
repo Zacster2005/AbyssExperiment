@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
+    public string Menu = "menu";
+
     public int Health;
 
     public int MaxHealth;
@@ -29,25 +32,26 @@ public class PlayerStats : MonoBehaviour
 
         HealthVal.text = Health.ToString();
 
-        if(attack)
-        {
-            Health--;
-            attack= false;
-        }
+       
 
         if(Health < 0)
         {
-            Health= 0;
-            PlayerDead = true;
+            Health = 0;
+            SceneManager.LoadScene("menu");//Call Menu scene
+
         }
 
 
     }//Update
 
-    public static void Attacked()
-    {
-        attack = true;
-    }
+        public void PlayerAttacked(int Dmg)
+        {
+                Health -= Dmg;              
+        }
+
+
+
+
 
     public void OnTriggerEnter(Collider other)
     {

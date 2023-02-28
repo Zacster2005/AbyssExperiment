@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 using Vector3 = UnityEngine.Vector3;
 
 public class Enemy : MonoBehaviour
@@ -147,14 +148,16 @@ public class Enemy : MonoBehaviour
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
-        
-        transform.LookAt(player);
 
+        Vector3 playerPosition = new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z);
 
+        transform.LookAt(playerPosition);
 
         if (!alreadyAttacked)
         {
-            PlayerStats.Attacked();
+            GameObject thePlayer = GameObject.Find("Player");
+            PlayerStats playerScript = thePlayer.GetComponent<PlayerStats>();
+            playerScript.PlayerAttacked(1);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timebetweenAttacks);
         } 
