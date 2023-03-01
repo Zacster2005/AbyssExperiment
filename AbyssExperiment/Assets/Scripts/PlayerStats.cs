@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerStats : MonoBehaviour
 {
+<<<<<<< Updated upstream
+=======
+    
+
+>>>>>>> Stashed changes
     public int Health;
 
     public int MaxHealth;
@@ -16,6 +22,8 @@ public class PlayerStats : MonoBehaviour
     public Text HealthVal;
 
     public static bool PlayerDead;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,17 +37,26 @@ public class PlayerStats : MonoBehaviour
 
         HealthVal.text = Health.ToString();
 
+<<<<<<< Updated upstream
         if(attack)
         {
             Health--;
             attack= false;
         }
+=======
+>>>>>>> Stashed changes
 
-        if(Health < 0)
+
+        if (Health < 0)
         {
+<<<<<<< Updated upstream
             Health= 0;
             PlayerDead = true;
         }
+=======
+            Health = 0;
+        } 
+>>>>>>> Stashed changes
 
 
     }//Update
