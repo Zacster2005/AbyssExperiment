@@ -157,7 +157,7 @@ public class Enemy : MonoBehaviour
         {
             GameObject thePlayer = GameObject.Find("Player");
             PlayerStats playerScript = thePlayer.GetComponent<PlayerStats>();
-            playerScript.PlayerAttacked(1);
+            playerScript.Attacked();
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timebetweenAttacks);
         } 

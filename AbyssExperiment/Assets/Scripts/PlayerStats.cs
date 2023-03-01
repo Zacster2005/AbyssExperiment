@@ -6,11 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-<<<<<<< Updated upstream
-=======
-    
 
->>>>>>> Stashed changes
+
     public int Health;
 
     public int MaxHealth;
@@ -37,31 +34,30 @@ public class PlayerStats : MonoBehaviour
 
         HealthVal.text = Health.ToString();
 
-<<<<<<< Updated upstream
+
         if(attack)
         {
             Health--;
             attack= false;
         }
-=======
->>>>>>> Stashed changes
+
 
 
         if (Health < 0)
         {
-<<<<<<< Updated upstream
+
             Health= 0;
             PlayerDead = true;
         }
-=======
-            Health = 0;
-        } 
->>>>>>> Stashed changes
+
+
+    
+
 
 
     }//Update
 
-    public static void Attacked()
+    public void Attacked()
     {
         attack = true;
     }
