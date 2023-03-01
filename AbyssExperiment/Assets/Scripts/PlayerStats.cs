@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class PlayerStats : MonoBehaviour
 {
-    public string Menu = "menu";
+<<<<<<< Updated upstream
+=======
+    
 
+>>>>>>> Stashed changes
     public int Health;
 
     public int MaxHealth;
@@ -19,6 +22,8 @@ public class PlayerStats : MonoBehaviour
     public Text HealthVal;
 
     public static bool PlayerDead;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,26 +37,34 @@ public class PlayerStats : MonoBehaviour
 
         HealthVal.text = Health.ToString();
 
-       
-
-        if(Health < 0)
+<<<<<<< Updated upstream
+        if(attack)
         {
-            Health = 0;
-            SceneManager.LoadScene("menu");//Call Menu scene
-
+            Health--;
+            attack= false;
         }
+=======
+>>>>>>> Stashed changes
+
+
+        if (Health < 0)
+        {
+<<<<<<< Updated upstream
+            Health= 0;
+            PlayerDead = true;
+        }
+=======
+            Health = 0;
+        } 
+>>>>>>> Stashed changes
 
 
     }//Update
 
-        public void PlayerAttacked(int Dmg)
-        {
-                Health -= Dmg;              
-        }
-
-
-
-
+    public static void Attacked()
+    {
+        attack = true;
+    }
 
     public void OnTriggerEnter(Collider other)
     {
