@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     // Attacking
 
     public float timebetweenAttacks;
-    bool alreadyAttacked;
+    bool alreadyAttacked = false;
 
     //states
     public float sightRange;
@@ -93,16 +93,6 @@ public class Enemy : MonoBehaviour
         if (walkpointset)
         {
             agent.SetDestination(walkPoint);
-            
-            if(gameObject.tag == "Ghost")
-            {
-                Anim.Play(Walk);
-            }
-           
-            if(gameObject.tag == "BigGuy")
-            {
-                Anim.Play(BigWalk);
-            }
 
         }
          
@@ -133,16 +123,6 @@ public class Enemy : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-
-        if (gameObject.tag == "Ghost")
-        {
-            Anim.Play(Walk);
-        }
-
-        if (gameObject.tag == "BigGuy")
-        {
-            Anim.Play(BigWalk);
-        }
     } 
 
     private void AttackPlayer()

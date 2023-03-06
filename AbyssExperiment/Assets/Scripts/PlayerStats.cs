@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -14,7 +15,6 @@ public class PlayerStats : MonoBehaviour
 
     public static int Batteries =0;
 
-    public static bool attack;
 
     public Text HealthVal;
 
@@ -34,20 +34,14 @@ public class PlayerStats : MonoBehaviour
 
         HealthVal.text = Health.ToString();
 
-
-        if(attack)
-        {
-            Health--;
-            attack= false;
-        }
-
-
-
         if (Health < 0)
         {
 
             Health= 0;
-            PlayerDead = true;
+            GameObject UI = GameObject.Find("Canvas");
+            PauseMenu pauseMenu = UI.GetComponent<PauseMenu>();
+            pauseMenu.Pause();
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
 
@@ -59,7 +53,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Attacked()
     {
-        attack = true;
+        Health--;
     }
 
     public void OnTriggerEnter(Collider other)
