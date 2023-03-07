@@ -23,9 +23,9 @@ public class Idler : MonoBehaviour
     public bool d2;//divide2
 
     //Animation
-    private string Attack = "attack";
-    private string Crouch = "stand";
-    private string Walk = "walk";
+    private string attack = "Attack";
+    private string idle = "Idle";
+    private string walk = "Walk";
 
 
 
@@ -82,7 +82,7 @@ public class Idler : MonoBehaviour
     private void Idle()
     {
         agent.SetDestination(transform.position);
-        //Anim.Play(Idle);
+        Anim.Play(idle);
     }
 
     
@@ -90,7 +90,7 @@ public class Idler : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        //play walk/run
+        Anim.Play(walk);
     }
 
     private void AttackPlayer()
@@ -106,7 +106,7 @@ public class Idler : MonoBehaviour
             GameObject thePlayer = GameObject.Find("Player");
             PlayerStats playerScript = thePlayer.GetComponent<PlayerStats>();
             playerScript.Attacked();
-            ////play attack
+            Anim.Play(attack);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timebetweenAttacks);
         }

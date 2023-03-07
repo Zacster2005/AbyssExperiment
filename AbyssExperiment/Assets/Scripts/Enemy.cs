@@ -95,6 +95,7 @@ public class Enemy : MonoBehaviour
         {
             agent.SetDestination(walkPoint);
             Anim.Play(walk);
+            //footsteps
         }
          
 
@@ -125,6 +126,7 @@ public class Enemy : MonoBehaviour
     {
         agent.SetDestination(player.position);
         Anim.Play(walk);
+        //footsteps
     } 
 
     private void AttackPlayer()
@@ -141,6 +143,7 @@ public class Enemy : MonoBehaviour
             PlayerStats playerScript = thePlayer.GetComponent<PlayerStats>();
             playerScript.Attacked();
             Anim.Play(attack);
+            //attack audio
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timebetweenAttacks);
         } 
