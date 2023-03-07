@@ -26,9 +26,10 @@ public class Enemy : MonoBehaviour
 
 
     //Animations
+    private string walk = "Walk";
+    private string attack = "Attack";
+    private string Stand = "Crouch";
 
-    private string Walk = "Ghost For demoAction";
-    private string BigWalk = "Layer0";
 
     //patroling
     public Vector3 walkPoint;
@@ -93,7 +94,7 @@ public class Enemy : MonoBehaviour
         if (walkpointset)
         {
             agent.SetDestination(walkPoint);
-
+            Anim.Play(walk);
         }
          
 
@@ -123,6 +124,7 @@ public class Enemy : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        Anim.Play(walk);
     } 
 
     private void AttackPlayer()
@@ -138,6 +140,7 @@ public class Enemy : MonoBehaviour
             GameObject thePlayer = GameObject.Find("Player");
             PlayerStats playerScript = thePlayer.GetComponent<PlayerStats>();
             playerScript.Attacked();
+            Anim.Play(attack);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timebetweenAttacks);
         } 

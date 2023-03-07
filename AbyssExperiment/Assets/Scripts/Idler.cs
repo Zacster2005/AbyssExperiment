@@ -22,6 +22,13 @@ public class Idler : MonoBehaviour
     public bool x2;//times 2
     public bool d2;//divide2
 
+    //Animation
+    private string Attack = "attack";
+    private string Crouch = "stand";
+    private string Walk = "walk";
+
+
+
 
     // Attacking
 
@@ -75,7 +82,7 @@ public class Idler : MonoBehaviour
     private void Idle()
     {
         agent.SetDestination(transform.position);
-        //play idle   
+        //Anim.Play(Idle);
     }
 
     
