@@ -68,7 +68,7 @@ public class Flashlight : MonoBehaviour
             Nobat= true;
         }
 
-        if(PlayerStats.Batteries > 0)
+        if(PlayerStats.Batteries > 0 && BatteryPercent <= 0)
         {
             BatteryPercent = 100f;
             PlayerStats.Batteries--;

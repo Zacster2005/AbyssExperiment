@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
 
 
     public Text HealthVal;
+    public Text NumBatteries;
 
     public static bool PlayerDead;
 
@@ -33,6 +34,7 @@ public class PlayerStats : MonoBehaviour
     {
 
         HealthVal.text = Health.ToString();
+        NumBatteries.text = Batteries.ToString();
 
         if (Health < 0)
         {
