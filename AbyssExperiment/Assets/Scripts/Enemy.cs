@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     private string walk = "Walk";
     private string attack = "Attack";
     private string Stand = "Crouch";
+    private string run = "Run";
 
 
     //patroling
@@ -125,7 +126,7 @@ public class Enemy : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-        Anim.Play(walk);
+        Anim.Play(run);
         //footsteps
     } 
 
