@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -27,7 +28,8 @@ public class Idler : MonoBehaviour
     private string idle = "Idle";
     private string walk = "Walk";
 
-
+    //Audio
+    public AudioSource Steps;
 
 
     // Attacking
@@ -91,6 +93,7 @@ public class Idler : MonoBehaviour
     {
         agent.SetDestination(player.position);
         Anim.Play(walk);
+        Steps.Play();
     }
 
     private void AttackPlayer()

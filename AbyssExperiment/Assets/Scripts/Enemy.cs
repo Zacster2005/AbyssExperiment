@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
     public bool x2;//times 2
     public bool d2;//divide2
 
+    //Audio
+    public AudioSource Steps;
 
 
 
@@ -96,7 +98,7 @@ public class Enemy : MonoBehaviour
         {
             agent.SetDestination(walkPoint);
             Anim.Play(walk);
-            //footsteps
+            Steps.Play();
         }
          
 
@@ -127,8 +129,8 @@ public class Enemy : MonoBehaviour
     {
         agent.SetDestination(player.position);
         Anim.Play(run);
-        //footsteps
-    } 
+        Steps.Play();
+    }
 
     private void AttackPlayer()
     {
