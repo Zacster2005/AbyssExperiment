@@ -936,11 +936,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d8d83f13acb9e445bfcdbf90e805f35, type: 3}
---- !u!1 &1004957177 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6361717062599375651, guid: 1d8d83f13acb9e445bfcdbf90e805f35, type: 3}
-  m_PrefabInstance: {fileID: 1004957176}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1213038465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1640,8 +1635,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCheckpoint: {fileID: 0}
-  MainCam: {fileID: 1004957177}
   player: {fileID: 842033955}
+  playerDead: 0
 --- !u!4 &1722525068
 Transform:
   m_ObjectHideFlags: 0
@@ -2043,6 +2038,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2022366960386570144, guid: bb9dafe166530ce4180abb8e5988f92a, type: 3}
+      propertyPath: m_Acceleration
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022366960386570144, guid: bb9dafe166530ce4180abb8e5988f92a, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2022366960386570145, guid: bb9dafe166530ce4180abb8e5988f92a, type: 3}
       propertyPath: player
       value: 

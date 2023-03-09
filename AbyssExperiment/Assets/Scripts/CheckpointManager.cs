@@ -10,7 +10,10 @@ public class CheckpointManager : MonoBehaviour
 
     public bool playerDead = false;
 
-
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     public void Update()
     {
        if(playerDead)
