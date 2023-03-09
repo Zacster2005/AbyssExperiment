@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class PauseMenu : MonoBehaviour
 {
-
     public static bool GameIsPaused = false;
-
     public GameObject pauseMenuUI;
-    
+
+    // Store the position of the current checkpoint
+    public Vector3 currentCheckpoint;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -28,10 +30,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+       
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
+        //Ondeath change to new scene later
+        GameObject check = GameObject.Find("CheckpointManager");
+        CheckpointManager checkpointM = check.GetComponent<CheckpointManager>();
+        checkpointM.RespawnPlayer();
+
     }
 
     public void Pause()
@@ -39,7 +47,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-    } 
+    }
 
     public void LoadMenu()
     {
@@ -51,4 +59,8 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
-}
+
+
+    
+}//class
+

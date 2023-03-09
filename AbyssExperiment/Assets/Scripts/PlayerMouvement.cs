@@ -14,13 +14,12 @@ public class PlayerMouvement : MonoBehaviour
     private Animator animator;
     public LightShake lightShake;
 
+    public PlayerStats playerStats;
+
+
 
     Vector3 velocity;
     bool isGrounded;
-
-    
-
-    
 
     void Start ()
     {

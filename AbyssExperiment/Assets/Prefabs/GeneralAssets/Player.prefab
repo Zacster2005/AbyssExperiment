@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6361717060904654202}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6361717060904654193}
-  m_LocalRotation: {x: -0.0013306382, y: 0.96347016, z: 0.00036987252, w: -0.26781216}
+  m_LocalRotation: {x: -0.0013283839, y: 0.9634709, z: 0.0003692423, w: -0.26780975}
   m_LocalPosition: {x: -4.49968, y: 1.1207063, z: 4.2992654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -81,6 +81,8 @@ MonoBehaviour:
   Walk: {fileID: 0}
   Downlength: 1
   lightShake: {fileID: 6361717062336439251}
+  playerStats: {fileID: 6361717060904654198}
+  checkpointManager: {fileID: 0}
 --- !u!114 &6361717060904654198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac44c9f253308743a72f780318d1fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  MaxHealth: 0
+  Health: 5
+  MaxHealth: 5
   HealthVal: {fileID: 0}
 --- !u!114 &6361717060904654202
 MonoBehaviour:
@@ -260,6 +262,7 @@ GameObject:
   - component: {fileID: 6361717062599375649}
   - component: {fileID: 6361717062599375648}
   - component: {fileID: 6361717062599375655}
+  - component: {fileID: 1004957178}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -355,6 +358,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerBody: {fileID: 6361717060904654197}
+--- !u!114 &1004957178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361717062599375651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 0}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &6361717062655413685
 GameObject:
   m_ObjectHideFlags: 0
