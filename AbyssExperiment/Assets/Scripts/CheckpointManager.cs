@@ -4,26 +4,34 @@ using UnityEngine;
 public class CheckpointManager : MonoBehaviour
 {
 
-    public GameObject currentCheckpoint;
+    public Transform currentCheckpoint;
     
     public GameObject player;
 
-    public float checkX;
-    public float checkY;
-    public float checkZ;
+    public bool playerDead = false;
+
 
     public void Update()
     {
-        checkX = currentCheckpoint.transform.position.x;
-        checkY = currentCheckpoint.transform.position.y;
-        checkZ = currentCheckpoint.transform.position.z;
+       if(playerDead)
+        {
+            player.transform.position = new Vector3(currentCheckpoint.position.x, currentCheckpoint.position.y, currentCheckpoint.position.z);
+            player.GetComponent<PlayerStats>().Health = player.GetComponent<PlayerStats>().MaxHealth;
+        }
     }
 
     public void RespawnPlayer()
     {
-        player.transform.position = new Vector3 (checkX, checkY, checkZ);
-        player.GetComponent<PlayerStats>().Health = player.GetComponent<PlayerStats>().MaxHealth;
+        playerDead = true;
+        StartCoroutine(Reset());
     }
+
+    public IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(2f);
+        playerDead = false;
+    }
+
 }//class
 
 

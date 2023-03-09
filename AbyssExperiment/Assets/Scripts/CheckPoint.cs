@@ -10,7 +10,7 @@ public class Checkpoint : MonoBehaviour
         {
             GameObject check = GameObject.Find("CheckpointManager");
             CheckpointManager checkpointM = check.GetComponent<CheckpointManager>();
-            checkpointM.currentCheckpoint = this.gameObject;
+            checkpointM.currentCheckpoint = this.transform;
         }
     }
 }

@@ -15,7 +15,7 @@ public class PlayerMouvement : MonoBehaviour
     public LightShake lightShake;
 
     public PlayerStats playerStats;
-    public CheckpointManager checkpointManager;
+
 
 
     Vector3 velocity;
