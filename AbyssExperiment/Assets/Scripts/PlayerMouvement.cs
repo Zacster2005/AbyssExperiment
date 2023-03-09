@@ -14,13 +14,25 @@ public class PlayerMouvement : MonoBehaviour
     private Animator animator;
     public LightShake lightShake;
 
+    public PlayerStats playerStats;
+    public CheckpointManager checkpointManager;
+
 
     Vector3 velocity;
     bool isGrounded;
 
-    
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("checkpoint"))
+        {
+            checkpointManager.UpdateCurrentCheckpoint(other.gameObject);
+        }
+    }
+
+
+
+
 
     void Start ()
     {

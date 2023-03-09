@@ -4,52 +4,41 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class PlayerStats : MonoBehaviour
 {
-
-
     public int Health;
-
     public int MaxHealth;
-
-    public static int Batteries =0;
-
-
+    public static int Batteries = 0;
     public Text HealthVal;
-
     public static bool PlayerDead;
-
-    
+    private Vector3 checkpointPosition;
+    public CheckpointManager checkpointManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         HealthVal.text = Health.ToString();
 
-        if (Health < 0)
+        if (Health <= 0)
         {
-
-            Health= 0;
+            // Set PlayerDead to true and pause the game
+            PlayerDead = true;
             GameObject UI = GameObject.Find("Canvas");
             PauseMenu pauseMenu = UI.GetComponent<PauseMenu>();
             pauseMenu.Pause();
             Cursor.lockState = CursorLockMode.Confined;
         }
+    }
 
-
-    
-
-
-
-    }//Update
+    public void SetCheckpoint(Vector3 position)
+    {
+        checkpointPosition = position;
+    }
 
     public void Attacked()
     {
@@ -58,11 +47,17 @@ public class PlayerStats : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "battery") 
+        if (other.gameObject.tag == "battery")
         {
             Batteries++;
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "checkpoint")
+        {
+            // Update the current checkpoint position
+            PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
+            pauseMenu.SetCheckpoint(other.transform.position);
+            Destroy(other.gameObject);
+        }
     }
-
-}//class
+}
