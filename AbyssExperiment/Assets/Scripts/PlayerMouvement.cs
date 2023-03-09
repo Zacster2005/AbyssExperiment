@@ -21,19 +21,6 @@ public class PlayerMouvement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("checkpoint"))
-        {
-            checkpointManager.UpdateCurrentCheckpoint(other.gameObject);
-        }
-    }
-
-
-
-
-
     void Start ()
     {
         animator = GetComponent<Animator>();

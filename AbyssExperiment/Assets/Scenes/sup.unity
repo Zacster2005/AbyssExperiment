@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13040014, g: 0.09601523, b: 0.06181486, a: 1}
+  m_IndirectSpecularColor: {r: 0.13040014, g: 0.096015215, b: 0.06181486, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -649,6 +649,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2513689151387116164, guid: e86ca85f1319a1c4ab08cd0346c0301c, type: 3}
   m_PrefabInstance: {fileID: 932183387}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &842033955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6361717060904654193, guid: 1d8d83f13acb9e445bfcdbf90e805f35, type: 3}
+  m_PrefabInstance: {fileID: 1004957176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &932183387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -926,6 +931,10 @@ PrefabInstance:
       propertyPath: HealthVal
       value: 
       objectReference: {fileID: 365254082}
+    - target: {fileID: 6361717060904654198, guid: 1d8d83f13acb9e445bfcdbf90e805f35, type: 3}
+      propertyPath: MaxHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6361717060904654198, guid: 1d8d83f13acb9e445bfcdbf90e805f35, type: 3}
       propertyPath: checkpointManager
       value: 
@@ -1697,7 +1706,7 @@ GameObject:
   m_Layer: 0
   m_Name: CheckpointManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1713,8 +1722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2949f4b7edcf84ca4a518bd30a3244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoints: []
   currentCheckpoint: {fileID: 0}
+  player: {fileID: 842033955}
 --- !u!4 &1722525068
 Transform:
   m_ObjectHideFlags: 0
@@ -1723,7 +1732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722525066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -105.78059, y: -20.934772, z: -138.68736}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1968,7 +1977,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6361717060904654198, guid: 1d8d83f13acb9e445bfcdbf90e805f35, type: 3}
   m_PrefabInstance: {fileID: 1004957176}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 842033955}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ac44c9f253308743a72f780318d1fb9, type: 3}

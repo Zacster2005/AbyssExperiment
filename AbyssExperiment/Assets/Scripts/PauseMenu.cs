@@ -30,10 +30,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+       
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
+        //Ondeath change to new scene later
+        GameObject check = GameObject.Find("CheckpointManager");
+        CheckpointManager checkpointM = check.GetComponent<CheckpointManager>();
+        checkpointM.RespawnPlayer();
+
     }
 
     public void Pause()
@@ -54,10 +60,7 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
-    // Set the current checkpoint position when the player collides with a checkpoint object
-    public void SetCheckpoint(Vector3 position)
-    {
-        currentCheckpoint = position;
-    }
-}
+
+    
+}//class
 

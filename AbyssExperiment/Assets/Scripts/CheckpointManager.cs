@@ -1,41 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
-    public List<GameObject> checkpoints;
+
     public GameObject currentCheckpoint;
-    private Vector3 currentCheckpointPosition;
+    
+    public GameObject player;
 
-    private void Start()
+    public float checkX;
+    public float checkY;
+    public float checkZ;
+
+    public void Update()
     {
-        foreach (Transform child in transform)
-        {
-            if (child.CompareTag("checkpoint"))
-            {
-                checkpoints.Add(child.gameObject);
-            }
-        }
+        checkX = currentCheckpoint.transform.position.x;
+        checkY = currentCheckpoint.transform.position.y;
+        checkZ = currentCheckpoint.transform.position.z;
     }
 
-    public void UpdateCurrentCheckpoint(GameObject newCheckpoint)
+    public void RespawnPlayer()
     {
-        currentCheckpoint = newCheckpoint;
-        checkpoints.Remove(newCheckpoint);
+        player.transform.position = new Vector3 (checkX, checkY, checkZ);
+        player.GetComponent<PlayerStats>().Health = player.GetComponent<PlayerStats>().MaxHealth;
     }
-
-    public void SetCurrentCheckpoint(Vector3 checkpointPosition)
-    {
-        currentCheckpointPosition = checkpointPosition;
-    }
-
-    public void RespawnPlayer(GameObject playerObject)
-    {
-        playerObject.transform.position = currentCheckpointPosition;
-        playerObject.GetComponent<PlayerStats>().Health = playerObject.GetComponent<PlayerStats>().MaxHealth;
-    }
-}
+}//class
 
 
 

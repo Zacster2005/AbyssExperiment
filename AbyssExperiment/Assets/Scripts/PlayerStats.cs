@@ -11,8 +11,7 @@ public class PlayerStats : MonoBehaviour
     public static int Batteries = 0;
     public Text HealthVal;
     public static bool PlayerDead;
-    private Vector3 checkpointPosition;
-    public CheckpointManager checkpointManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +34,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void SetCheckpoint(Vector3 position)
-    {
-        checkpointPosition = position;
-    }
+
 
     public void Attacked()
     {
@@ -52,12 +48,7 @@ public class PlayerStats : MonoBehaviour
             Batteries++;
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.tag == "checkpoint")
-        {
-            // Update the current checkpoint position
-            PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
-            pauseMenu.SetCheckpoint(other.transform.position);
-            Destroy(other.gameObject);
-        }
+
+
     }
-}
+}//class

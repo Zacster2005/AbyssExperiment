@@ -8,8 +8,9 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerStats playerStats = other.GetComponent<PlayerStats>();
-            playerStats.SetCheckpoint(transform.position);
+            GameObject check = GameObject.Find("CheckpointManager");
+            CheckpointManager checkpointM = check.GetComponent<CheckpointManager>();
+            checkpointM.currentCheckpoint = this.gameObject;
         }
     }
 }
