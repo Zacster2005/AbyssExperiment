@@ -4,6 +4,7 @@ using System.Numerics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using static UnityEditor.Experimental.GraphView.GraphView;
 using Vector3 = UnityEngine.Vector3;
 
 public class Enemy : MonoBehaviour
@@ -90,9 +91,16 @@ public class Enemy : MonoBehaviour
 
     private void Patroling()
     {
-       
+        if (Vector3.Distance(transform.position, walkPoint) < 1f)
+        {
+            Debug.Log("Magnitude");
+            walkpointset = false;
+        }
 
-        if (walkpointset == false) SearchWalkPoint();
+        if (walkpointset == false)
+        {
+            SearchWalkPoint();
+        }
 
         if (walkpointset)
         {
@@ -100,15 +108,7 @@ public class Enemy : MonoBehaviour
             Anim.Play(walk);
             Steps.Play();
         }
-         
-
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-       
-        if (distanceToWalkPoint.magnitude < 1f)       
-            walkpointset = false;
-        
-            
+   
        
     }
 
