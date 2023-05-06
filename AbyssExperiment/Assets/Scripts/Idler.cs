@@ -98,24 +98,41 @@ public class Idler : MonoBehaviour
 
     private void AttackPlayer()
     {
-        agent.SetDestination(transform.position);
+        RaycastHit hit;
 
-        Vector3 playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-
-        transform.LookAt(playerPosition);
-
-        if (!alreadyAttacked)
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
         {
-            GameObject thePlayer = GameObject.Find("Player");
-            PlayerStats playerScript = thePlayer.GetComponent<PlayerStats>();
-            playerScript.Attacked();
-            Anim.Play(attack);
-            GameObject Cam = GameObject.Find("Main Camera");
-            PlayerLook playerlook = Cam.GetComponent<PlayerLook>();
-            StartCoroutine(playerlook.Shake(.2f, .5f));//work on timing
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timebetweenAttacks);
+            if (hit.transform.tag == "Player")
+            {
+                agent.SetDestination(transform.position);
+
+                Vector3 playerPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+
+                transform.LookAt(playerPosition);
+
+                if (!alreadyAttacked)
+                {
+                    GameObject thePlayer = GameObject.Find("Player");
+                    PlayerStats playerScript = thePlayer.GetComponent<PlayerStats>();
+                    playerScript.Attacked();
+                    Anim.Play(attack);
+                    GameObject Cam = GameObject.Find("Main Camera");
+                    PlayerLook playerlook = Cam.GetComponent<PlayerLook>();
+                    StartCoroutine(playerlook.Shake(.2f, 0.5f));//timing later
+                                                                //attack audio
+                    alreadyAttacked = true;
+                    Invoke(nameof(ResetAttack), timebetweenAttacks);
+                }
+            }
+        
+        else
+            {
+                ChasePlayer();
+            }
+        
+        
         }
+
     }
     private void ResetAttack()
     {
