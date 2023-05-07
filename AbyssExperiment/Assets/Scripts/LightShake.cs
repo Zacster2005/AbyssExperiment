@@ -29,7 +29,7 @@ public class LightShake : MonoBehaviour
 
                 transform.localPosition = new Vector3(originalPos.x, y, originalPos.z);
 
-                float Camy = Random.Range(0.9f, 1.1f);
+                float Camy = Random.Range(0.95f, 1.05f);
 
                 Cam.transform.localPosition = new Vector3(CamPos.x, Camy, CamPos.z);
 
