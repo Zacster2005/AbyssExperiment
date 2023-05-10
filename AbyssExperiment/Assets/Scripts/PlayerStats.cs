@@ -1,3 +1,4 @@
+using CameraFading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     public static int Batteries = 0;
     public Text HealthVal;
     public static bool PlayerDead;
+    public AudioSource Death;
 
 
     // Start is called before the first frame update
@@ -23,14 +25,23 @@ public class PlayerStats : MonoBehaviour
     {
         HealthVal.text = Health.ToString();
 
+        if(Health == -1)
+        {
+            Debug.Log("ISDEAD");
+            CameraFading.CameraFade.In(2f);
+            Death.Play();
+        }
+
+
         if (Health <= 0)
         {
             // Set PlayerDead to true and pause the game
-            PlayerDead = true;
             GameObject UI = GameObject.Find("Canvas");
             PauseMenu pauseMenu = UI.GetComponent<PauseMenu>();
             pauseMenu.Pause();
             Cursor.lockState = CursorLockMode.Confined;
+            CameraFading.CameraFade.In(2f);
+            Death.Play();
         }
     }
 
