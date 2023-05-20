@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DoorWithPipe
+  m_Name: WallBlue
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 557793d37f914764ab724240f4074d9c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 36f0cd0159ec1c943bdc6914b6c80384, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -46,15 +46,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 92d9ad1ceb1031242bfc868b7de2a9df, type: 3}
+        m_Texture: {fileID: 2800000, guid: 370879bfb2aef45429f801ac371050ef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 8e626830eb64b574690e758c2e4ef4a5, type: 3}
+        m_Texture: {fileID: 2800000, guid: d3f4e0bc717b49a438e32933e9e293bd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 5e553b8a9034ca940ae832d41f1548a6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8a23a4847110fe844b8bd0d128c81e4c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
