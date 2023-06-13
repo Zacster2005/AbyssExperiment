@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int Health;
     public int MaxHealth;
-    public static int Batteries = 0;
+    public static int Batteries = 0, Collectibles;
     public Text HealthVal;
     public static bool PlayerDead, AttackWait = true;
     public AudioSource Death;
