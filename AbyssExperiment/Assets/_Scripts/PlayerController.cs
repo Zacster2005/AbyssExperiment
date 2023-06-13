@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 dwn = transform.TransformDirection(Vector3.down);
 
-        if (Physics.Raycast(transform.position, dwn, 2))
+        if (Physics.Raycast(transform.position, dwn, 1.5f))
         {
             Grounded = true;
         }

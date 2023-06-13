@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     public int MaxHealth;
     public static int Batteries = 0;
     public Text HealthVal;
-    public static bool PlayerDead;
+    public static bool PlayerDead, AttackWait = true;
     public AudioSource Death;
 
 
@@ -46,7 +46,14 @@ public class PlayerStats : MonoBehaviour
 
     public void Attacked()
     {
-        Health--;
+        if (AttackWait)
+        {
+            Health--;
+            AttackWait = false;
+            StartCoroutine(Reset());
+        }
+
+
     }
 
     public void OnTriggerEnter(Collider other)
@@ -58,5 +65,11 @@ public class PlayerStats : MonoBehaviour
         }
 
 
+    }
+
+    IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(3);
+        AttackWait = true;
     }
 }//class
