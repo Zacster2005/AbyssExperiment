@@ -129,7 +129,7 @@ public class Enemy : MonoBehaviour
     {
         agent.SetDestination(player.position);
         Anim.Play(run);
-        Steps.Play();
+        //Steps.Play();
     }
 
     private void AttackPlayer()

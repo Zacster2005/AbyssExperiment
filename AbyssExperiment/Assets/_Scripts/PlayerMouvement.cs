@@ -32,14 +32,6 @@ public class PlayerMouvement : MonoBehaviour
     
     void Update()
     {
-        RaycastHit hit;
-        
-        Vector3 dwn = transform.TransformDirection(Vector3.down);
-
-        if (Physics.Raycast(transform.position, dwn, out hit, Downlength))
-        {
-            isGrounded= true;
-        }
 
         if(controller.isGrounded)
         {
