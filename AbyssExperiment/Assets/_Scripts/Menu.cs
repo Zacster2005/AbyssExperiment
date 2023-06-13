@@ -10,7 +10,7 @@ public class Menu : MonoBehaviour
     //Sounds
     public AudioSource Onclicksfx;
 
-   public void Play()
+    public void Play()
     {
         Onclicksfx.Play();
         StartCoroutine(StartGame());

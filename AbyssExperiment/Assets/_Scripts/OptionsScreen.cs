@@ -16,14 +16,14 @@ public class Options : MonoBehaviour
     public AudioMixer theMixer;
     public TMP_Text mastLabel, musicLabel, sfxLabel, msensLabel;
     public UnityEngine.UI.Slider mastSlider, musicSlider, sfxSlider, msensSlider;
-    
-    
-    
+
+
+
     private void Start()
     {
         fullscreenTog.isOn = Screen.fullScreen;
 
-        if(QualitySettings.vSyncCount == 0)
+        if (QualitySettings.vSyncCount == 0)
         {
             vsyncTog.isOn = false;
         }
@@ -33,9 +33,9 @@ public class Options : MonoBehaviour
         }
 
         bool foundRes = false;
-        for(int i = 0; i < resolutions.Count; i++)
+        for (int i = 0; i < resolutions.Count; i++)
         {
-            if(Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
+            if (Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
             {
                 foundRes = true;
 
@@ -51,14 +51,14 @@ public class Options : MonoBehaviour
             musicSlider.value = vol;
             theMixer.GetFloat("SFXVol", out vol);
             sfxSlider.value = vol;
-            
+
 
             mastLabel.text = Mathf.RoundToInt(mastSlider.value + 50).ToString();
             musicLabel.text = Mathf.RoundToInt(musicSlider.value + 50).ToString();
             sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 60).ToString();
         }
 
-        if(!foundRes)
+        if (!foundRes)
         {
             ResItem newRes = new ResItem();
             newRes.horizontal = Screen.width;
@@ -68,20 +68,20 @@ public class Options : MonoBehaviour
             selectedResolution = resolutions.Count - 1;
             UpdateResLabel();
 
-            
+
         }
 
-        
+
     }
 
-    
-    
+
+
 
 
     public void ResRight()
     {
         selectedResolution--;
-        if(selectedResolution < 0 )
+        if (selectedResolution < 0)
         {
             selectedResolution = 0;
         }
@@ -108,7 +108,7 @@ public class Options : MonoBehaviour
     public void ApplyGraphics()
     {
         //Screen.fullScreen = fullscreenTog.isOn;
-        if(fullscreenTog.isOn)
+        if (fullscreenTog.isOn)
         {
             QualitySettings.vSyncCount = 1;
         }
@@ -153,11 +153,11 @@ public class Options : MonoBehaviour
 
         PlayerLook.mouseSens = msensSlider.value;
 
-        
+
 
     }
 
-    
+
 }
 
 [System.Serializable]
