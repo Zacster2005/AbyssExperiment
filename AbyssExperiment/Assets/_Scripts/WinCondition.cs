@@ -32,7 +32,7 @@ public class WinCondition : MonoBehaviour
 
     void Lose()
     {
-
+        Debug.Log("Lost");
     }
 
     void Win()

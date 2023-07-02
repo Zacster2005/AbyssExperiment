@@ -151,7 +151,8 @@ public class Options : MonoBehaviour
     {
         msensLabel.text = Mathf.RoundToInt(msensSlider.value).ToString();
 
-        PlayerLook.mouseSens = msensSlider.value;
+       
+        //PlayerController.Sensitivity = msensSlider.value;
 
 
 

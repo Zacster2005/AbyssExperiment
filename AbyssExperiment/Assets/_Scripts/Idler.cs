@@ -116,10 +116,6 @@ public class Idler : MonoBehaviour
                     PlayerStats playerScript = thePlayer.GetComponent<PlayerStats>();
                     playerScript.Attacked();
                     Anim.Play(attack);
-                    GameObject Cam = GameObject.Find("Main Camera");
-                    PlayerLook playerlook = Cam.GetComponent<PlayerLook>();
-                    StartCoroutine(playerlook.Shake(.2f, 0.5f));//timing later
-                                                                //attack audio
                     alreadyAttacked = true;
                     Invoke(nameof(ResetAttack), timebetweenAttacks);
                 }

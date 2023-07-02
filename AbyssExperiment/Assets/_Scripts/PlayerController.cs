@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public Animator animator;
     public GameObject CamHolder;
-    public float Speed, Sensitivity, MaxForce, jumpforce, SprintSpeed, crouchSpeed;
+    public float Speed, Sensitivity = 1f, MaxForce, jumpforce, SprintSpeed, crouchSpeed;
     private Vector2 move, look;
     private float lookRotation;
     public bool Grounded =true;
