@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
+    
 
     public Transform currentCheckpoint;
     
     public GameObject player;
 
-    public bool playerDead = false;
+    bool playerDead = false;
 
     private void Awake()
     {

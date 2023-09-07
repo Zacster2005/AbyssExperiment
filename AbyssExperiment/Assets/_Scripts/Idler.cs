@@ -9,6 +9,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Idler : MonoBehaviour
 {
+    [Header("Public Set Values")]
     public UnityEngine.AI.NavMeshAgent agent;
 
     public Transform player;
@@ -17,11 +18,11 @@ public class Idler : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-    //Others var
+    
 
     public static bool PlayerLightOn;
-    public bool x2;//times 2
-    public bool d2;//divide2
+    bool x2 = true;//times 2
+    bool d2;//divide2
 
     //Animation
     private string attack = "Attack";
@@ -46,7 +47,7 @@ public class Idler : MonoBehaviour
     {
         player = GameObject.Find("Fps Controller").transform;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        x2 = true;
+        //Locate and set important Values
 
         Anim = GetComponent<Animator>();
     }
@@ -54,16 +55,20 @@ public class Idler : MonoBehaviour
     private void Update()
     {
         //check for sight and attack range
+        //Sight Range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        //Attack Range
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         //Set AI state
+        //Sends down to functions
         if (!playerInSightRange && !playerInAttackRange) Idle();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
 
         if (PlayerLightOn && d2)
         {
+            //Ajust enemy sight range depending on player flashlight
             sightRange = sightRange * 2;
             x2 = true;
             d2 = false;
